@@ -1,6 +1,7 @@
 import tkinter as tk
 import math
 import functools as ft
+import sys
 
 def probability(polarizations):
     '''gives the percentage of light that passes through all of the filters'''
@@ -149,7 +150,16 @@ def main(input=None):
     btn_biblio.bind("<Button-1>", bibliographie1)
     btn_biblio.pack()
 
+    btn_exit = tk.Button(text="Arrêter la simulation")
+    btn_exit.bind("<Button-1>", exit)
+    btn_exit.pack()
 
-window = tk.Tk()
-main()
-window.mainloop()
+try:
+    window = tk.Tk()
+    main()
+    window.mainloop()
+except:
+    sys.exit(0)
+
+def exit(input):
+    sys.exit(0)
